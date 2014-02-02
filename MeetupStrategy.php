@@ -89,7 +89,8 @@ class MeetupStrategy extends OpauthStrategy
                     'uid' => $user['id'],
                     'info' => array(),
                     'credentials' => array(
-                        'token' => $results['access_token']
+                        'token' => $results['access_token'],
+                        'expires' => date('c', time() + $results['expires_in'])
                     ),
                     'raw' => $user
                 );
